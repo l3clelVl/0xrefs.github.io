@@ -1,6 +1,4 @@
 ---
-command: |
-  autorecon $IP
 variants:
   - label: single
     command: |

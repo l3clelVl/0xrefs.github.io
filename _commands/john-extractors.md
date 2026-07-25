@@ -21,13 +21,15 @@ variants:
   - label: pdf2john
     command: |
       pdf2john document.pdf > hash.txt
+  - label: unshadow
+    command: |
+      unshadow passwd.txt shadow.txt > hash.txt
   - label: crack
     command: |
       john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
 description: Extract a crackable hash from an encrypted file with the 2john helpers, then crack it with John
 os: [Linux]
 category: [oscp, cli]
-service: [Files]
 phase: [Cracking]
 references:
   - https://www.kali.org/tools/john/#bitlocker2john
